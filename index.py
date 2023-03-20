@@ -2,15 +2,13 @@
 from flask import Flask, render_template, request
 import requests
 
+
 # Configure app
-app = Flask(__name__, template_folder='/templates', static_folder='/static')
+app = Flask(__name__)
+
 # Configuration Of Auto Reload Of All The Templates
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# Configure session
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 
 @app.after_request
@@ -52,7 +50,3 @@ def fetch():
     records = {"data": response['data'][::2]}
 
     return render_template('api_test_fetch.html', data=records, response=message)
-
-if __name__ == '__main__':
-  # Run the Flask app
-  app.run(host='0.0.0.0', debug=True, port=8080)

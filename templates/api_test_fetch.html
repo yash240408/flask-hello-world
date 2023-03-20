@@ -44,37 +44,24 @@
                   </div>
                 </center>
                 {% endif %}
-                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-
-                <form method="post" action="/add">
-
-                  <div class="form-outline mb-4">
-                    <input type="text" name="f_name" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Your First Name</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="text" name="l_name" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Your Last Name</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example3cg">Your Email</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cg">Password</label>
-                  </div>
-
-
-                  <div class="d-flex justify-content-center">
-                    <input type="submit" value="Submit">
-                  </div>
-
-                </form>
-
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last name</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in data.data %}
+                    <tr>
+                      <td>{{ i.f_name }}</td>
+                      <td>{{ i.l_name }}</td>
+                      <td>{{ i.email }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
