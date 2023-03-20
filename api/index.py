@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import requests
 
 # Configure app
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__, template_folder='/templates', static_folder='/static')
 # Configuration Of Auto Reload Of All The Templates
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
