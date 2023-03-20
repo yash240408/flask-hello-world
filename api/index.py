@@ -52,3 +52,7 @@ def fetch():
     records = {"data": response['data'][::2]}
 
     return render_template('api_test_fetch.html', data=records, response=message)
+
+if __name__ == '__main__':
+  # Run the Flask app
+  app.run(host='0.0.0.0', debug=True, port=8080)
