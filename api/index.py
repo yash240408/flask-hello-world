@@ -1,16 +1,9 @@
 # Import of all the library used in this project
-from flask import Flask, render_template, request, session, redirect, url_for, flash
-from flask_session import Session
-from cs50 import SQL
-from werkzeug.security import check_password_hash, generate_password_hash
+from flask import Flask, render_template, request
 import requests
-import random
-import string
-from flask_mail import Mail, Message
 
 # Configure app
-app = Flask(__name__)
-
+app = Flask(__name__, template_folder='templates', static_folder='static')
 # Configuration Of Auto Reload Of All The Templates
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
