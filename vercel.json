@@ -1,15 +1,11 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./index.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
+  "version": 2,
+  "routes": [
+    { "src": "/traffic-signal", "dest": "./index.py" }
+    // Add more routes as needed
+  ],
+  "builds": [
+    { "src": "server/**/*.py", "use": "@vercel/python" }
+  ]
 }
+
